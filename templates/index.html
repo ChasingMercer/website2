@@ -1,0 +1,176 @@
+{% import "bootstrap/wtf.html" as wtf %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Mercer Consulting</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" >
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Mercer Consulting</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#page-top">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup-section">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead" bg="static/assets/img/data-bg.png">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="text-white-70 mx-auto py-5 text-uppercase">Mercer Consulting</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Helping manage your data</h2>
+                        <a class="btn btn-light px-5 mx-3" href="#portfolio">Portfolio</a>
+                        <a class="btn btn-light px-5 mx-3" href="#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="portfolio">
+            <div class="container px-2 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src=static/assets/img/btc.jpeg alt="..." /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Shoreline</h4>
+                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-right">
+                            <h4>Shoreline</h4>
+                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-3"><img class="img-fluid mb-3 mb-lg-0" src=static/assets/img/btc.jpeg alt="..." /></div>
+                </div>
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src=static/assets/img/btc.jpeg alt="..." /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Shoreline</h4>
+                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Signup-->
+        <section class="signup-section" id="signup-section" >
+            <div class="container">
+                <form class="form-wrapper bg-light text-center text-dark"
+                      method="POST" action="{{ url_for('home') }}"  id="contact" >
+                    {{ form.csrf_token }}
+                    <h2>Contact</h2>
+                    <div class="form-group">
+                        <label>Name</label><br>
+                        {{ form.name(class_= "form-control-lg dark", size=35, placeholder="Name") }}
+                        <br>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Email</label><br>
+                        {{ form.email(class_= "form-control-lg", size=35, placeholder="Email") }}
+                        <br>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Company</label><br>
+                        {{ form.company(class_= "form-control-lg", size=35, placeholder="Company") }}
+                        <br>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Note</label><br>
+                        {{ form.note(class_="form-control-lg", size="30", cols="40", rows="3", placeholder="Note") }}
+                        <br>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-light">Submit</button>
+                    </div>
+                    <br>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+        <div class="row">
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-2 gx-lg-5">
+                        <div class="col-md mb-0 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-envelope text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Email</h4>
+                                    <hr class="my-4 mx-auto" />
+                                    <div class="small text-black-50"><a href="#!">mercerconsults@gmail.com</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Phone</h4>
+                                    <hr class="my-4 mx-auto" />
+                                    <div class="small text-black-50">+44 (07)428024803</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md mb-0 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <div class="social-light d-flex justify-content-center">
+                                        <a class="mx-2" href="https://github.com/BBobArctor"><i class="fab fa-github"></i></a>
+                                    </div>
+                                    <h4 class="text-uppercase m-0">Github</h4>
+                                    <hr class="my-4 mx-auto" />
+                                    <div class="small text-black-50"><a href="https://github.com/BBobArctor">github.com/BBobArctor</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+
+        </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5"><br>Copyright &copy; Mercer Consulting 2021</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/static/js/scripts.js"></script>
+    </body>
+</html>
