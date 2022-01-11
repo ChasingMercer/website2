@@ -13,7 +13,7 @@ import smtplib
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
+app.config['SECRET_KEY'] = '---SECRET---'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'True'
 db = SQLAlchemy(app)
@@ -62,7 +62,7 @@ def home():
                   f"\n I will get back to you shortly.\n\n Felix Morgan \n"
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
-        server.login("mercerconsults@gmail.com", "19Criminals")
+        server.login("mercerconsults@gmail.com", "---SECRET---")
         server.sendmail("mercerconsults@gmail.com", email, message)
         server.sendmail("mercerconsults@gmail.com", "mercerconsults@gmail.com",f"New Message alert, {name}\n\n, {email}\n"
                                                                                f", {company}\n, {note}")
